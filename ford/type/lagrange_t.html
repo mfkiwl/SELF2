@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Spectral Element Library in Fortran. Fortran classes for implementing spectral element methods on CPU and GPU hardware.">
+    <meta name="author" content="Fluid Numerics" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>Lagrange_t &ndash; SELF </title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SELF </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>Lagrange_t
+    <small>Derived Type</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+    <li><i class="fa fa-legal"></i> 3-Clause BSD with attribution</li> 
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p> 2.3% of total for derived types.</p>Including implementation: 221 statements,  0.4% of total for derived types.">23 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/SELF_Lagrange_t.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/self_lagrange_t.f90.html'>SELF_Lagrange_t.f90</a></li>
+     <li><a href='../module/self_lagrange_t.html'>SELF_Lagrange_t</a></li>
+     <li class="active">Lagrange_t</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-m">M</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-n">N</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-bmatrix">bMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-bweights">bWeights</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-blas_handle">blas_handle</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-controlnodetype">controlNodeType</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-controlpoints">controlPoints</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-dmatrix">dMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-dgmatrix">dgMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-imatrix">iMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-qweights">qWeights</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-targetnodetype">targetNodeType</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-targetpoints">targetPoints</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculatebarycentricweights">CalculateBarycentricWeights</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculatederivativematrix">CalculateDerivativeMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculateinterpolationmatrix">CalculateInterpolationMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculatelagrangepolynomials">CalculateLagrangePolynomials</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-free~7">Free</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-init~7">Init</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-writehdf5~4">WriteHDF5</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/lagrange_t.html#src">Lagrange_t</a>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>type, public :: Lagrange_t</h2>
+    <p>A data structure for working with Lagrange Interpolating Polynomials in one, two, and three dimensions.
+The Lagrange data-structure stores the information necessary to interpolate between two
+sets of grid-points and to estimate the derivative of data at native grid points. Routines for
+multidimensional interpolation are based on the tensor product of 1-D interpolants. It is
+assumed that the polynomial degree (and the interpolation nodes) are the same in each direction.
+This assumption permits the storage of only one array of interpolation nodes and barycentric
+weights and is what allows this data structure to be flexible.</p>
+<br>    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Inherits</h3>
+      </div>
+      <div class="panel-body">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: type~~lagrange_t~~InheritsGraph Pages: 1 -->
+<svg id="typelagrange_tInheritsGraph" width="229pt" height="32pt"
+ viewBox="0.00 0.00 229.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~lagrange_t~~InheritsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>type~~lagrange_t~~InheritsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 225,-28 225,4 -4,4"/>
+<!-- type~lagrange_t -->
+<g id="type~~lagrange_t~~InheritsGraph_node1" class="node">
+<title>type~lagrange_t</title>
+<polygon fill="none" stroke="black" points="221,-24 148,-24 148,0 221,0 221,-24"/>
+<text text-anchor="middle" x="184.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">Lagrange_t</text>
+</g>
+<!-- c_ptr -->
+<g id="type~~lagrange_t~~InheritsGraph_node2" class="node">
+<title>c_ptr</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_ptr</text>
+</g>
+<!-- type~lagrange_t&#45;&gt;c_ptr -->
+<g id="type~~lagrange_t~~InheritsGraph_edge1" class="edge">
+<title>type~lagrange_t&#45;&gt;c_ptr</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M147.83,-12C122.88,-12 89.65,-12 64.52,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.29,-8.5 54.29,-12 64.29,-15.5 64.29,-8.5"/>
+<text text-anchor="middle" x="101" y="-14.4" font-family="Helvetica,sans-Serif" font-size="9.50">blas_handle</text>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="186pt" height="32pt"
+ viewBox="0.00 0.00 185.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 181.5,-28 181.5,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="177.5,-24 72.5,-24 72.5,0 177.5,0 177.5,-24"/>
+<text text-anchor="middle" x="125" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a derived type to the parent type which it
+    extends. Dashed arrows point from a derived type to the other
+    types it contains as a components, with a label listing the name(s) of
+    said component(s). Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Inherited by</h3>
+      </div>
+      <div class="panel-body">
+     <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: type~~lagrange_t~~InheritedByGraph Pages: 1 -->
+<svg id="typelagrange_tInheritedByGraph" width="641pt" height="237pt"
+ viewBox="0.00 0.00 641.00 237.31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~lagrange_t~~InheritedByGraph" class="graph" transform="scale(0.32 0.32) rotate(0) translate(4 742)">
+<title>type~~lagrange_t~~InheritedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-742 2011,-742 2011,4 -4,4"/>
+<!-- type~lagrange_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node1" class="node">
+<title>type~lagrange_t</title>
+<polygon fill="none" stroke="black" points="73,-441 0,-441 0,-417 73,-417 73,-441"/>
+<text text-anchor="middle" x="36.5" y="-426.6" font-family="Helvetica,sans-Serif" font-size="10.50">Lagrange_t</text>
+</g>
+<!-- type~lagrange -->
+<g id="type~~lagrange_t~~InheritedByGraph_node2" class="node">
+<title>type~lagrange</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node2"><a xlink:href=".././type/lagrange.html" xlink:title="Lagrange">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="174,-483 110,-483 110,-459 174,-459 174,-483"/>
+<text text-anchor="middle" x="142" y="-468.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Lagrange</text>
+</a>
+</g>
+</g>
+<!-- type~lagrange&#45;&gt;type~lagrange_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge1" class="edge">
+<title>type~lagrange&#45;&gt;type~lagrange_t</title>
+<path fill="none" stroke="#ff0000" d="M121.39,-458.88C117.47,-456.14 113.49,-453.12 110,-450 100.83,-441.81 104.29,-429 92,-429"/>
+</g>
+<!-- type~lagrange~3 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node3" class="node">
+<title>type~lagrange~3</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node3"><a xlink:href=".././type/lagrange~3.html" xlink:title="Lagrange">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="174,-441 110,-441 110,-417 174,-417 174,-441"/>
+<text text-anchor="middle" x="142" y="-426.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Lagrange</text>
+</a>
+</g>
+</g>
+<!-- type~lagrange~3&#45;&gt;type~lagrange_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge2" class="edge">
+<title>type~lagrange~3&#45;&gt;type~lagrange_t</title>
+<path fill="none" stroke="#ff0000" d="M109.89,-429C103.95,-429 97.78,-429 92,-429"/>
+</g>
+<!-- type~lagrange~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node4" class="node">
+<title>type~lagrange~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node4"><a xlink:href=".././type/lagrange~2.html" xlink:title="Lagrange">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="174,-399 110,-399 110,-375 174,-375 174,-399"/>
+<text text-anchor="middle" x="142" y="-384.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Lagrange</text>
+</a>
+</g>
+</g>
+<!-- type~lagrange~2&#45;&gt;type~lagrange_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge3" class="edge">
+<title>type~lagrange~2&#45;&gt;type~lagrange_t</title>
+<path fill="none" stroke="#ff0000" d="M121.39,-399.12C117.47,-401.86 113.49,-404.88 110,-408 100.83,-416.19 104.29,-429 92,-429"/>
+<path fill="none" stroke="#ff0000" d="M91,-429C88.48,-429 85.89,-429 83.28,-429"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="83.18,-425.5 73.18,-429 83.18,-432.5 83.18,-425.5"/>
+</g>
+<!-- type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_node5" class="node">
+<title>type~self_dataobj</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node5"><a xlink:href=".././type/self_dataobj.html" xlink:title="SELF_DataObj">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="326,-483 239,-483 239,-459 326,-459 326,-483"/>
+<text text-anchor="middle" x="282.5" y="-468.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DataObj</text>
+</a>
+</g>
+</g>
+<!-- type~self_dataobj&#45;&gt;type~lagrange -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge4" class="edge">
+<title>type~self_dataobj&#45;&gt;type~lagrange</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M238.82,-471C221.57,-471 201.73,-471 184.6,-471"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="184.33,-467.5 174.33,-471 184.33,-474.5 184.33,-467.5"/>
+<text text-anchor="middle" x="206.5" y="-473.4" font-family="Helvetica,sans-Serif" font-size="9.50">interp</text>
+</g>
+<!-- type~scalar2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node6" class="node">
+<title>type~scalar2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node6"><a xlink:href=".././type/scalar2d_t.html" xlink:title="Scalar2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="433.5,-525 363.5,-525 363.5,-501 433.5,-501 433.5,-525"/>
+<text text-anchor="middle" x="398.5" y="-510.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~scalar2d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge5" class="edge">
+<title>type~scalar2d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M375.25,-500.89C371.01,-498.19 366.74,-495.18 363,-492 353.63,-484.04 357.22,-469.66 345,-471"/>
+</g>
+<!-- type~vector2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node7" class="node">
+<title>type~vector2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node7"><a xlink:href=".././type/vector2d_t.html" xlink:title="Vector2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="433.5,-609 363.5,-609 363.5,-585 433.5,-585 433.5,-609"/>
+<text text-anchor="middle" x="398.5" y="-594.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Vector2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~vector2d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge6" class="edge">
+<title>type~vector2d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M371.61,-584.78C368.31,-582.28 365.29,-579.36 363,-576 349.69,-556.42 368.53,-468.42 345,-471"/>
+</g>
+<!-- type~scalar3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node8" class="node">
+<title>type~scalar3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node8"><a xlink:href=".././type/scalar3d_t.html" xlink:title="Scalar3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="433.5,-483 363.5,-483 363.5,-459 433.5,-459 433.5,-483"/>
+<text text-anchor="middle" x="398.5" y="-468.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~scalar3d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge7" class="edge">
+<title>type~scalar3d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M363.27,-469.92C357.17,-470.04 350.89,-470.35 345,-471"/>
+</g>
+<!-- type~tensor2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node9" class="node">
+<title>type~tensor2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node9"><a xlink:href=".././type/tensor2d_t.html" xlink:title="Tensor2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="434,-567 363,-567 363,-543 434,-543 434,-567"/>
+<text text-anchor="middle" x="398.5" y="-552.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tensor2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~tensor2d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge8" class="edge">
+<title>type~tensor2d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M372.28,-542.8C368.8,-540.28 365.55,-537.35 363,-534 345.35,-510.84 373.95,-467.82 345,-471"/>
+</g>
+<!-- type~tensor3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node10" class="node">
+<title>type~tensor3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node10"><a xlink:href=".././type/tensor3d_t.html" xlink:title="Tensor3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="434,-441 363,-441 363,-417 434,-417 434,-441"/>
+<text text-anchor="middle" x="398.5" y="-426.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tensor3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~tensor3d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge9" class="edge">
+<title>type~tensor3d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M375.25,-441.11C371.01,-443.81 366.74,-446.82 363,-450 353.63,-457.96 357.22,-469.66 345,-471"/>
+</g>
+<!-- type~vector3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node11" class="node">
+<title>type~vector3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node11"><a xlink:href=".././type/vector3d_t.html" xlink:title="Vector3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="433.5,-399 363.5,-399 363.5,-375 433.5,-375 433.5,-399"/>
+<text text-anchor="middle" x="398.5" y="-384.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Vector3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~vector3d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge10" class="edge">
+<title>type~vector3d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M372.28,-399.2C368.8,-401.72 365.55,-404.65 363,-408 345.35,-431.16 373.95,-467.82 345,-471"/>
+</g>
+<!-- type~scalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node12" class="node">
+<title>type~scalar1d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node12"><a xlink:href=".././type/scalar1d_t.html" xlink:title="Scalar1D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="433.5,-273 363.5,-273 363.5,-249 433.5,-249 433.5,-273"/>
+<text text-anchor="middle" x="398.5" y="-258.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar1D_t</text>
+</a>
+</g>
+</g>
+<!-- type~scalar1d_t&#45;&gt;type~self_dataobj -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge11" class="edge">
+<title>type~scalar1d_t&#45;&gt;type~self_dataobj</title>
+<path fill="none" stroke="#ff0000" d="M392.87,-273.11C385.61,-292.48 371.52,-331.74 363,-366 357.29,-388.97 368.53,-468.42 345,-471"/>
+<path fill="none" stroke="#ff0000" d="M344,-471C341.49,-471.28 338.91,-471.5 336.31,-471.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="336.02,-468.19 326.2,-472.17 336.36,-475.18 336.02,-468.19"/>
+</g>
+<!-- type~scalar2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node13" class="node">
+<title>type~scalar2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node13"><a xlink:href=".././type/scalar2d.html" xlink:title="Scalar2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-525 471.5,-525 471.5,-501 532.5,-501 532.5,-525"/>
+<text text-anchor="middle" x="502" y="-510.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar2D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar2d&#45;&gt;type~scalar2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge12" class="edge">
+<title>type~scalar2d&#45;&gt;type~scalar2d_t</title>
+<path fill="none" stroke="#ff0000" d="M482.04,-525.19C478.25,-527.92 474.39,-530.93 471,-534 461.89,-542.26 465.19,-556.59 453,-555"/>
+<path fill="none" stroke="#ff0000" d="M452,-555C439.81,-553.41 443.37,-541.96 434,-534 432.83,-533.01 431.61,-532.03 430.35,-531.07"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="431.96,-527.93 421.75,-525.11 427.98,-533.68 431.96,-527.93"/>
+</g>
+<!-- type~scalar3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node14" class="node">
+<title>type~scalar3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node14"><a xlink:href=".././type/scalar3d.html" xlink:title="Scalar3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-441 471.5,-441 471.5,-417 532.5,-417 532.5,-441"/>
+<text text-anchor="middle" x="502" y="-426.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar3D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar3d&#45;&gt;type~scalar3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge16" class="edge">
+<title>type~scalar3d&#45;&gt;type~scalar3d_t</title>
+<path fill="none" stroke="#48ff00" d="M482.04,-441.19C478.25,-443.92 474.39,-446.93 471,-450 461.89,-458.26 465.05,-468.55 453,-471"/>
+<path fill="none" stroke="#48ff00" d="M452,-471C449.33,-471.54 446.57,-471.96 443.77,-472.27"/>
+<polygon fill="#48ff00" stroke="#48ff00" points="443.32,-468.79 433.59,-472.98 443.81,-475.78 443.32,-468.79"/>
+</g>
+<!-- type~vector2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node15" class="node">
+<title>type~vector2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node15"><a xlink:href=".././type/vector2d~2.html" xlink:title="Vector2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-735 471.5,-735 471.5,-711 532.5,-711 532.5,-735"/>
+<text text-anchor="middle" x="502" y="-720.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Vector2D</text>
+</a>
+</g>
+</g>
+<!-- type~vector2d~2&#45;&gt;type~vector2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge15" class="edge">
+<title>type~vector2d~2&#45;&gt;type~vector2d_t</title>
+<path fill="none" stroke="#ffda00" d="M471.39,-726.49C465.15,-726.27 458.72,-725.3 453,-723"/>
+</g>
+<!-- type~vector2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node16" class="node">
+<title>type~vector2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node16"><a xlink:href=".././type/vector2d.html" xlink:title="Vector2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-693 471.5,-693 471.5,-669 532.5,-669 532.5,-693"/>
+<text text-anchor="middle" x="502" y="-678.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Vector2D</text>
+</a>
+</g>
+</g>
+<!-- type~vector2d&#45;&gt;type~vector2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge14" class="edge">
+<title>type~vector2d&#45;&gt;type~vector2d_t</title>
+<path fill="none" stroke="#ffda00" d="M482.04,-693.19C478.25,-695.92 474.39,-698.93 471,-702 461.89,-710.26 464.41,-727.59 453,-723"/>
+<path fill="none" stroke="#ffda00" d="M452,-723C412.27,-707.02 402.47,-650.83 400.14,-619.15"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="403.63,-618.86 399.59,-609.07 396.64,-619.25 403.63,-618.86"/>
+</g>
+<!-- type~scalar2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node17" class="node">
+<title>type~scalar2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node17"><a xlink:href=".././type/scalar2d~2.html" xlink:title="Scalar2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-567 471.5,-567 471.5,-543 532.5,-543 532.5,-567"/>
+<text text-anchor="middle" x="502" y="-552.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar2D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar2d~2&#45;&gt;type~scalar2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge13" class="edge">
+<title>type~scalar2d~2&#45;&gt;type~scalar2d_t</title>
+<path fill="none" stroke="#ff0000" d="M471.48,-556.2C465.35,-556.12 458.95,-555.78 453,-555"/>
+</g>
+<!-- type~scalar3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node18" class="node">
+<title>type~scalar3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node18"><a xlink:href=".././type/scalar3d~2.html" xlink:title="Scalar3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-483 471.5,-483 471.5,-459 532.5,-459 532.5,-483"/>
+<text text-anchor="middle" x="502" y="-468.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar3D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar3d~2&#45;&gt;type~scalar3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge17" class="edge">
+<title>type~scalar3d~2&#45;&gt;type~scalar3d_t</title>
+<path fill="none" stroke="#48ff00" d="M471.37,-469.15C465.25,-469.28 458.88,-469.8 453,-471"/>
+</g>
+<!-- type~tensor2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node19" class="node">
+<title>type~tensor2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node19"><a xlink:href=".././type/tensor2d.html" xlink:title="Tensor2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="533,-609 471,-609 471,-585 533,-585 533,-609"/>
+<text text-anchor="middle" x="502" y="-594.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tensor2D</text>
+</a>
+</g>
+</g>
+<!-- type~tensor2d&#45;&gt;type~tensor2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge18" class="edge">
+<title>type~tensor2d&#45;&gt;type~tensor2d_t</title>
+<path fill="none" stroke="#00ff91" d="M482.04,-609.19C478.25,-611.92 474.39,-614.93 471,-618 461.89,-626.26 464.75,-642.62 453,-639"/>
+<path fill="none" stroke="#00ff91" d="M452,-639C424.17,-630.42 451.65,-599.16 434,-576 433.44,-575.27 432.85,-574.56 432.23,-573.86"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="434.52,-571.22 424.72,-567.2 429.87,-576.45 434.52,-571.22"/>
+</g>
+<!-- type~tensor3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node20" class="node">
+<title>type~tensor3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node20"><a xlink:href=".././type/tensor3d.html" xlink:title="Tensor3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="533,-399 471,-399 471,-375 533,-375 533,-399"/>
+<text text-anchor="middle" x="502" y="-384.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tensor3D</text>
+</a>
+</g>
+</g>
+<!-- type~tensor3d&#45;&gt;type~tensor3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge20" class="edge">
+<title>type~tensor3d&#45;&gt;type~tensor3d_t</title>
+<path fill="none" stroke="#0091ff" d="M470.78,-382.26C464.57,-382.56 458.32,-383.88 453,-387"/>
+</g>
+<!-- type~tensor3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node21" class="node">
+<title>type~tensor3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node21"><a xlink:href=".././type/tensor3d~2.html" xlink:title="Tensor3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="533,-357 471,-357 471,-333 533,-333 533,-357"/>
+<text text-anchor="middle" x="502" y="-342.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tensor3D</text>
+</a>
+</g>
+</g>
+<!-- type~tensor3d~2&#45;&gt;type~tensor3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge21" class="edge">
+<title>type~tensor3d~2&#45;&gt;type~tensor3d_t</title>
+<path fill="none" stroke="#0091ff" d="M482.04,-357.19C478.25,-359.92 474.39,-362.93 471,-366 461.89,-374.26 463.6,-380.77 453,-387"/>
+<path fill="none" stroke="#0091ff" d="M452,-387C441.4,-393.23 443.37,-400.04 434,-408 432.83,-408.99 431.61,-409.97 430.35,-410.93"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="427.98,-408.32 421.75,-416.89 431.96,-414.07 427.98,-408.32"/>
+</g>
+<!-- type~scalar1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node22" class="node">
+<title>type~scalar1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node22"><a xlink:href=".././type/scalar1d.html" xlink:title="Scalar1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-231 471.5,-231 471.5,-207 532.5,-207 532.5,-231"/>
+<text text-anchor="middle" x="502" y="-216.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar1D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar1d&#45;&gt;type~scalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge24" class="edge">
+<title>type~scalar1d&#45;&gt;type~scalar1d_t</title>
+<path fill="none" stroke="#ff00da" d="M482.04,-206.81C478.25,-204.08 474.39,-201.07 471,-198 461.89,-189.74 463.79,-171.11 453,-177"/>
+</g>
+<!-- type~scalar1d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node23" class="node">
+<title>type~scalar1d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node23"><a xlink:href=".././type/scalar1d~2.html" xlink:title="Scalar1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-189 471.5,-189 471.5,-165 532.5,-165 532.5,-189"/>
+<text text-anchor="middle" x="502" y="-174.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar1D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar1d~2&#45;&gt;type~scalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge26" class="edge">
+<title>type~scalar1d~2&#45;&gt;type~scalar1d_t</title>
+<path fill="none" stroke="#ff00da" d="M471.42,-172.5C465.05,-172.73 458.56,-173.97 453,-177"/>
+</g>
+<!-- type~tensor2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node24" class="node">
+<title>type~tensor2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node24"><a xlink:href=".././type/tensor2d~2.html" xlink:title="Tensor2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="533,-651 471,-651 471,-627 533,-627 533,-651"/>
+<text text-anchor="middle" x="502" y="-636.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tensor2D</text>
+</a>
+</g>
+</g>
+<!-- type~tensor2d~2&#45;&gt;type~tensor2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge19" class="edge">
+<title>type~tensor2d~2&#45;&gt;type~tensor2d_t</title>
+<path fill="none" stroke="#00ff91" d="M470.89,-641.73C464.86,-641.52 458.65,-640.74 453,-639"/>
+</g>
+<!-- type~vector3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node25" class="node">
+<title>type~vector3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node25"><a xlink:href=".././type/vector3d.html" xlink:title="Vector3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-273 471.5,-273 471.5,-249 532.5,-249 532.5,-273"/>
+<text text-anchor="middle" x="502" y="-258.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Vector3D</text>
+</a>
+</g>
+</g>
+<!-- type~vector3d&#45;&gt;type~vector3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge22" class="edge">
+<title>type~vector3d&#45;&gt;type~vector3d_t</title>
+<path fill="none" stroke="#4800ff" d="M482.04,-273.19C478.25,-275.92 474.39,-278.93 471,-282 461.89,-290.26 462.4,-295.08 453,-303"/>
+<path fill="none" stroke="#4800ff" d="M452,-303C431.83,-320 416.98,-346.8 408.31,-365.54"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="405.08,-364.2 404.25,-374.76 411.49,-367.02 405.08,-364.2"/>
+</g>
+<!-- type~vector3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node26" class="node">
+<title>type~vector3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node26"><a xlink:href=".././type/vector3d~2.html" xlink:title="Vector3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-315 471.5,-315 471.5,-291 532.5,-291 532.5,-315"/>
+<text text-anchor="middle" x="502" y="-300.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Vector3D</text>
+</a>
+</g>
+</g>
+<!-- type~vector3d~2&#45;&gt;type~vector3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge23" class="edge">
+<title>type~vector3d~2&#45;&gt;type~vector3d_t</title>
+<path fill="none" stroke="#4800ff" d="M471.36,-296.91C464.7,-297.09 458.1,-298.7 453,-303"/>
+</g>
+<!-- type~scalar1d~3 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node27" class="node">
+<title>type~scalar1d~3</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node27"><a xlink:href=".././type/scalar1d~3.html" xlink:title="Scalar1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="532.5,-147 471.5,-147 471.5,-123 532.5,-123 532.5,-147"/>
+<text text-anchor="middle" x="502" y="-132.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Scalar1D</text>
+</a>
+</g>
+</g>
+<!-- type~scalar1d~3&#45;&gt;type~scalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge25" class="edge">
+<title>type~scalar1d~3&#45;&gt;type~scalar1d_t</title>
+<path fill="none" stroke="#ff00da" d="M482.04,-147.19C478.25,-149.92 474.39,-152.93 471,-156 461.89,-164.26 463.79,-171.11 453,-177"/>
+<path fill="none" stroke="#ff00da" d="M452,-177C428.22,-189.98 413.83,-218.8 406.27,-239.04"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="402.89,-238.12 402.93,-248.72 409.5,-240.41 402.89,-238.12"/>
+</g>
+<!-- type~mappedvector2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node28" class="node">
+<title>type~mappedvector2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node28"><a xlink:href=".././type/mappedvector2d_t.html" xlink:title="MappedVector2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="897,-623 784,-623 784,-599 897,-599 897,-623"/>
+<text text-anchor="middle" x="840.5" y="-608.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedVector2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector2d_t&#45;&gt;type~vector2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge32" class="edge">
+<title>type~mappedvector2d_t&#45;&gt;type~vector2d</title>
+<path fill="none" stroke="#cbff00" d="M791.23,-623C743.58,-634.62 668.53,-652.29 603,-665 583.29,-668.82 561.26,-672.42 542.9,-675.23"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="542.21,-671.8 532.85,-676.75 543.26,-678.72 542.21,-671.8"/>
+</g>
+<!-- type~semquad -->
+<g id="type~~lagrange_t~~InheritedByGraph_node31" class="node">
+<title>type~semquad</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node31"><a xlink:href=".././type/semquad.html" xlink:title="SEMQuad">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="693.5,-618 629.5,-618 629.5,-594 693.5,-594 693.5,-618"/>
+<text text-anchor="middle" x="661.5" y="-603.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SEMQuad</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector2d_t&#45;&gt;type~semquad -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge46" class="edge">
+<title>type~mappedvector2d_t&#45;&gt;type~semquad</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M783.98,-609.43C758.02,-608.7 727.63,-607.84 703.75,-607.17"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="703.7,-603.66 693.6,-606.88 703.5,-610.66 703.7,-603.66"/>
+<text text-anchor="middle" x="743" y="-610.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~geometry1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node29" class="node">
+<title>type~geometry1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node29"><a xlink:href=".././type/geometry1d.html" xlink:title="Geometry1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="702,-231 621,-231 621,-207 702,-207 702,-231"/>
+<text text-anchor="middle" x="661.5" y="-216.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Geometry1D</text>
+</a>
+</g>
+</g>
+<!-- type~geometry1d&#45;&gt;type~scalar1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge35" class="edge">
+<title>type~geometry1d&#45;&gt;type~scalar1d</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M620.76,-219C596.94,-219 566.76,-219 542.91,-219"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="542.79,-215.5 532.79,-219 542.79,-222.5 542.79,-215.5"/>
+<text text-anchor="middle" x="577" y="-221.4" font-family="Helvetica,sans-Serif" font-size="9.50">x, dxds</text>
+</g>
+<!-- type~mappedvector3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node30" class="node">
+<title>type~mappedvector3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node30"><a xlink:href=".././type/mappedvector3d_t.html" xlink:title="MappedVector3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="897,-307 784,-307 784,-283 897,-283 897,-307"/>
+<text text-anchor="middle" x="840.5" y="-292.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedVector3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector3d_t&#45;&gt;type~vector3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge38" class="edge">
+<title>type~mappedvector3d_t&#45;&gt;type~vector3d</title>
+<path fill="none" stroke="#cc00ff" d="M783.93,-289.39C715.96,-282.52 602.57,-271.06 542.75,-265.02"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="542.88,-261.51 532.58,-263.99 542.17,-268.48 542.88,-261.51"/>
+</g>
+<!-- type~semhex -->
+<g id="type~~lagrange_t~~InheritedByGraph_node33" class="node">
+<title>type~semhex</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node33"><a xlink:href=".././type/semhex.html" xlink:title="SEMHex">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="689,-372 634,-372 634,-348 689,-348 689,-372"/>
+<text text-anchor="middle" x="661.5" y="-357.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SEMHex</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector3d_t&#45;&gt;type~semhex -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge51" class="edge">
+<title>type~mappedvector3d_t&#45;&gt;type~semhex</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M797,-307.04C773.96,-313.93 745.13,-323.15 720,-333 711.88,-336.18 703.29,-339.97 695.3,-343.69"/>
+<polygon fill="#003fff" stroke="#003fff" points="693.79,-340.54 686.25,-347.99 696.79,-346.86 693.79,-340.54"/>
+<text text-anchor="middle" x="743" y="-335.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~semquad&#45;&gt;type~scalar2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge27" class="edge">
+<title>type~semquad&#45;&gt;type~scalar2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M639.91,-593.84C612.44,-577.62 563.63,-548.8 532.32,-530.31"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="533.99,-527.23 523.6,-525.16 530.43,-533.26 533.99,-527.23"/>
+<text text-anchor="middle" x="577" y="-572.4" font-family="Helvetica,sans-Serif" font-size="9.50">nScale, J</text>
+</g>
+<!-- type~semquad&#45;&gt;type~vector2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge31" class="edge">
+<title>type~semquad&#45;&gt;type~vector2d</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M631.87,-618.11C609.61,-627.69 578.08,-641.63 551,-655 545.45,-657.74 539.6,-660.78 533.97,-663.78"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="531.93,-660.9 524.8,-668.74 535.26,-667.06 531.93,-660.9"/>
+<text text-anchor="middle" x="577" y="-657.4" font-family="Helvetica,sans-Serif" font-size="9.50">x, nHat</text>
+</g>
+<!-- type~semquad&#45;&gt;type~tensor2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge33" class="edge">
+<title>type~semquad&#45;&gt;type~tensor2d</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M629.38,-604.22C604.77,-602.82 570.21,-600.84 543.45,-599.31"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="543.43,-595.8 533.25,-598.73 543.03,-602.79 543.43,-595.8"/>
+<text text-anchor="middle" x="577" y="-604.4" font-family="Helvetica,sans-Serif" font-size="9.50">dxds, dsdx</text>
+</g>
+<!-- type~mappedscalar3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node32" class="node">
+<title>type~mappedscalar3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node32"><a xlink:href=".././type/mappedscalar3d_t.html" xlink:title="MappedScalar3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="897,-441 784,-441 784,-417 897,-417 897,-441"/>
+<text text-anchor="middle" x="840.5" y="-426.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~mappedscalar3d_t&#45;&gt;type~scalar3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge30" class="edge">
+<title>type~mappedscalar3d_t&#45;&gt;type~scalar3d</title>
+<path fill="none" stroke="#ff6600" d="M783.93,-429C715.96,-429 602.57,-429 542.75,-429"/>
+<polygon fill="#ff6600" stroke="#ff6600" points="542.58,-425.5 532.58,-429 542.58,-432.5 542.58,-425.5"/>
+</g>
+<!-- type~mappedscalar3d_t&#45;&gt;type~semhex -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge50" class="edge">
+<title>type~mappedscalar3d_t&#45;&gt;type~semhex</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M808.67,-416.98C778.06,-405.05 731.15,-386.76 698.77,-374.14"/>
+<polygon fill="#003fff" stroke="#003fff" points="699.81,-370.79 689.22,-370.42 697.27,-377.31 699.81,-370.79"/>
+<text text-anchor="middle" x="743" y="-401.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~semhex&#45;&gt;type~scalar3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge29" class="edge">
+<title>type~semhex&#45;&gt;type~scalar3d</title>
+<path fill="none" stroke="#ff6600" stroke-dasharray="5,2" d="M633.71,-370.37C611.4,-379.16 578.88,-392.32 551,-405 545.91,-407.31 540.57,-409.86 535.38,-412.41"/>
+<polygon fill="#ff6600" stroke="#ff6600" points="533.67,-409.35 526.27,-416.93 536.78,-415.62 533.67,-409.35"/>
+<text text-anchor="middle" x="577" y="-407.4" font-family="Helvetica,sans-Serif" font-size="9.50">nScale, J</text>
+</g>
+<!-- type~semhex&#45;&gt;type~tensor3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge34" class="edge">
+<title>type~semhex&#45;&gt;type~tensor3d</title>
+<path fill="none" stroke="#00ffcb" stroke-dasharray="5,2" d="M633.57,-358.83C611.16,-358.48 578.6,-359.43 551,-366 545.93,-367.21 540.73,-368.92 535.7,-370.86"/>
+<polygon fill="#00ffcb" stroke="#00ffcb" points="534.21,-367.69 526.34,-374.79 536.92,-374.15 534.21,-367.69"/>
+<text text-anchor="middle" x="577" y="-368.4" font-family="Helvetica,sans-Serif" font-size="9.50">dxds, dsdx</text>
+</g>
+<!-- type~semhex&#45;&gt;type~vector3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge37" class="edge">
+<title>type~semhex&#45;&gt;type~vector3d</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M641.19,-347.86C613.67,-330.57 563.02,-298.73 531.28,-278.77"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="532.8,-275.6 522.47,-273.24 529.07,-281.52 532.8,-275.6"/>
+<text text-anchor="middle" x="577" y="-325.4" font-family="Helvetica,sans-Serif" font-size="9.50">x, nHat</text>
+</g>
+<!-- type~mappedscalar2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node34" class="node">
+<title>type~mappedscalar2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node34"><a xlink:href=".././type/mappedscalar2d_t.html" xlink:title="MappedScalar2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="897,-536 784,-536 784,-512 897,-512 897,-536"/>
+<text text-anchor="middle" x="840.5" y="-521.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~mappedscalar2d_t&#45;&gt;type~scalar2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge28" class="edge">
+<title>type~mappedscalar2d_t&#45;&gt;type~scalar2d</title>
+<path fill="none" stroke="#ff0000" d="M783.93,-522.18C715.96,-519.96 602.57,-516.25 542.75,-514.3"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="542.69,-510.8 532.58,-513.97 542.46,-517.79 542.69,-510.8"/>
+</g>
+<!-- type~mappedscalar2d_t&#45;&gt;type~semquad -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge45" class="edge">
+<title>type~mappedscalar2d_t&#45;&gt;type~semquad</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M813.38,-536.1C782.71,-550.31 731.68,-573.95 697.58,-589.75"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="696.04,-586.61 688.44,-593.98 698.98,-592.96 696.04,-586.61"/>
+<text text-anchor="middle" x="743" y="-579.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~mappedscalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node35" class="node">
+<title>type~mappedscalar1d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node35"><a xlink:href=".././type/mappedscalar1d_t.html" xlink:title="MappedScalar1D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="897,-195 784,-195 784,-171 897,-171 897,-195"/>
+<text text-anchor="middle" x="840.5" y="-180.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar1D_t</text>
+</a>
+</g>
+</g>
+<!-- type~mappedscalar1d_t&#45;&gt;type~scalar1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge36" class="edge">
+<title>type~mappedscalar1d_t&#45;&gt;type~scalar1d</title>
+<path fill="none" stroke="#0066ff" d="M783.66,-185.18C739.42,-187.3 676.1,-191.23 621,-198 594.85,-201.21 565.71,-206.39 542.92,-210.79"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="542.07,-207.39 532.94,-212.75 543.42,-214.26 542.07,-207.39"/>
+</g>
+<!-- type~mappedscalar1d_t&#45;&gt;type~geometry1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge41" class="edge">
+<title>type~mappedscalar1d_t&#45;&gt;type~geometry1d</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M783.98,-194.29C760.95,-198.98 734.43,-204.37 712.07,-208.92"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="711.21,-205.52 702.11,-210.94 712.6,-212.38 711.21,-205.52"/>
+<text text-anchor="middle" x="743" y="-209.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~mappedvector2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node36" class="node">
+<title>type~mappedvector2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node36"><a xlink:href=".././type/mappedvector2d~2.html" xlink:title="MappedVector2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-623 979,-623 979,-599 1083,-599 1083,-623"/>
+<text text-anchor="middle" x="1031" y="-608.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedVector2D</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector2d~2&#45;&gt;type~mappedvector2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge40" class="edge">
+<title>type~mappedvector2d~2&#45;&gt;type~mappedvector2d_t</title>
+<path fill="none" stroke="#ff0000" d="M978.87,-609.01C965.84,-609.05 951.88,-609.56 939,-611"/>
+</g>
+<!-- type~mappedvector3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node37" class="node">
+<title>type~mappedvector3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node37"><a xlink:href=".././type/mappedvector3d~2.html" xlink:title="MappedVector3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-287 979,-287 979,-263 1083,-263 1083,-287"/>
+<text text-anchor="middle" x="1031" y="-272.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedVector3D</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector3d~2&#45;&gt;type~mappedvector3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge44" class="edge">
+<title>type~mappedvector3d~2&#45;&gt;type~mappedvector3d_t</title>
+<path fill="none" stroke="#7fff00" d="M992.77,-287.07C976.45,-291.35 956.95,-295.1 939,-295"/>
+<path fill="none" stroke="#7fff00" d="M937,-295C927.4,-294.95 917.26,-294.92 907.31,-294.91"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="907.05,-291.41 897.05,-294.9 907.05,-298.41 907.05,-291.41"/>
+</g>
+<!-- type~dgmodel1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node38" class="node">
+<title>type~dgmodel1d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node38"><a xlink:href=".././type/dgmodel1d_t.html" xlink:title="DGModel1D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1541,-203 1456,-203 1456,-179 1541,-179 1541,-203"/>
+<text text-anchor="middle" x="1498.5" y="-188.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel1D_t</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel1d_t&#45;&gt;type~geometry1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge42" class="edge">
+<title>type~dgmodel1d_t&#45;&gt;type~geometry1d</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M1455.77,-201.98C1449.84,-203.2 1443.79,-204.26 1438,-205 1141.65,-242.75 1064.72,-216.67 766,-220 745.56,-220.23 740.44,-220.18 720,-220 717.47,-219.98 714.87,-219.95 712.25,-219.92"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="712.14,-216.42 702.09,-219.78 712.04,-223.42 712.14,-216.42"/>
+<text text-anchor="middle" x="938" y="-224.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~mappedscalar1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node47" class="node">
+<title>type~mappedscalar1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node47"><a xlink:href=".././type/mappedscalar1d.html" xlink:title="MappedScalar1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-203 979,-203 979,-179 1083,-179 1083,-203"/>
+<text text-anchor="middle" x="1031" y="-188.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar1D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel1d_t&#45;&gt;type~mappedscalar1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge67" class="edge">
+<title>type~dgmodel1d_t&#45;&gt;type~mappedscalar1d</title>
+<path fill="none" stroke="#ff00eb" stroke-dasharray="5,2" d="M1455.78,-191C1373.42,-191 1189.61,-191 1093.4,-191"/>
+<polygon fill="#ff00eb" stroke="#ff00eb" points="1093.24,-187.5 1083.24,-191 1093.24,-194.5 1093.24,-187.5"/>
+<text text-anchor="middle" x="1269.5" y="-193.4" font-family="Helvetica,sans-Serif" font-size="9.50">solution, solutionGradient, flux, source, fluxDivergence, dSdt, workSol</text>
+</g>
+<!-- type~mappedvector3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node39" class="node">
+<title>type~mappedvector3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node39"><a xlink:href=".././type/mappedvector3d.html" xlink:title="MappedVector3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-329 979,-329 979,-305 1083,-305 1083,-329"/>
+<text text-anchor="middle" x="1031" y="-314.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedVector3D</text>
+</a>
+</g>
+</g>
+<!-- type~mappedvector3d&#45;&gt;type~mappedvector3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge43" class="edge">
+<title>type~mappedvector3d&#45;&gt;type~mappedvector3d_t</title>
+<path fill="none" stroke="#7fff00" d="M996.33,-304.93C979.36,-299.87 958.34,-295.1 939,-295"/>
+</g>
+<!-- type~dgmodel2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node40" class="node">
+<title>type~dgmodel2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node40"><a xlink:href=".././type/dgmodel2d_t.html" xlink:title="DGModel2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1541,-637 1456,-637 1456,-613 1541,-613 1541,-637"/>
+<text text-anchor="middle" x="1498.5" y="-622.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel2d_t&#45;&gt;type~semquad -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge47" class="edge">
+<title>type~dgmodel2d_t&#45;&gt;type~semquad</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M1455.91,-628.91C1449.91,-629.36 1443.8,-629.74 1438,-630 1147.62,-643 1073.8,-654.5 784,-632 755.3,-629.77 748.14,-628.09 720,-622 714.62,-620.84 709,-619.46 703.46,-618.02"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="704.24,-614.61 693.67,-615.39 702.41,-621.37 704.24,-614.61"/>
+<text text-anchor="middle" x="938" y="-644.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~mappedscalar2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node43" class="node">
+<title>type~mappedscalar2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node43"><a xlink:href=".././type/mappedscalar2d.html" xlink:title="MappedScalar2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-539 979,-539 979,-515 1083,-515 1083,-539"/>
+<text text-anchor="middle" x="1031" y="-524.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar2D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel2d_t&#45;&gt;type~mappedscalar2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge64" class="edge">
+<title>type~dgmodel2d_t&#45;&gt;type~mappedscalar2d</title>
+<path fill="none" stroke="#00c4ff" stroke-dasharray="5,2" d="M1489.73,-612.89C1479.72,-598.44 1460.84,-574.88 1438,-564 1325.43,-510.4 1175.55,-513.05 1093,-519.91"/>
+<polygon fill="#00c4ff" stroke="#00c4ff" points="1092.68,-516.42 1083.03,-520.79 1093.3,-523.4 1092.68,-516.42"/>
+<text text-anchor="middle" x="1269.5" y="-566.4" font-family="Helvetica,sans-Serif" font-size="9.50">solution, source, fluxDivergence, dSdt, workSol</text>
+</g>
+<!-- type~mappedvector2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node44" class="node">
+<title>type~mappedvector2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node44"><a xlink:href=".././type/mappedvector2d.html" xlink:title="MappedVector2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-581 979,-581 979,-557 1083,-557 1083,-581"/>
+<text text-anchor="middle" x="1031" y="-566.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedVector2D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel2d_t&#45;&gt;type~mappedvector2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge65" class="edge">
+<title>type~dgmodel2d_t&#45;&gt;type~mappedvector2d</title>
+<path fill="none" stroke="#004eff" stroke-dasharray="5,2" d="M1455.78,-619.98C1373.42,-610.07 1189.61,-587.96 1093.4,-576.39"/>
+<polygon fill="#004eff" stroke="#004eff" points="1093.58,-572.88 1083.24,-575.16 1092.75,-579.83 1093.58,-572.88"/>
+<text text-anchor="middle" x="1269.5" y="-618.4" font-family="Helvetica,sans-Serif" font-size="9.50">solutionGradient, flux</text>
+</g>
+<!-- type~mappedscalar3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node41" class="node">
+<title>type~mappedscalar3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node41"><a xlink:href=".././type/mappedscalar3d~2.html" xlink:title="MappedScalar3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-451 979,-451 979,-427 1083,-427 1083,-451"/>
+<text text-anchor="middle" x="1031" y="-436.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar3D</text>
+</a>
+</g>
+</g>
+<!-- type~mappedscalar3d~2&#45;&gt;type~mappedscalar3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge49" class="edge">
+<title>type~mappedscalar3d~2&#45;&gt;type~mappedscalar3d_t</title>
+<path fill="none" stroke="#00ffff" d="M978.95,-437.92C965.92,-437.95 951.93,-438.22 939,-439"/>
+</g>
+<!-- type~dgmodel3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node42" class="node">
+<title>type~dgmodel3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node42"><a xlink:href=".././type/dgmodel3d_t.html" xlink:title="DGModel3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1541,-369 1456,-369 1456,-345 1541,-345 1541,-369"/>
+<text text-anchor="middle" x="1498.5" y="-354.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel3d_t&#45;&gt;type~semhex -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge52" class="edge">
+<title>type~dgmodel3d_t&#45;&gt;type~semhex</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M1455.81,-357.15C1311.75,-357.67 836.37,-359.38 699.61,-359.87"/>
+<polygon fill="#003fff" stroke="#003fff" points="699.24,-356.37 689.25,-359.9 699.27,-363.37 699.24,-356.37"/>
+<text text-anchor="middle" x="938" y="-362.4" font-family="Helvetica,sans-Serif" font-size="9.50">geometry</text>
+</g>
+<!-- type~dgmodel3d_t&#45;&gt;type~mappedvector3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge59" class="edge">
+<title>type~dgmodel3d_t&#45;&gt;type~mappedvector3d</title>
+<path fill="none" stroke="#9cff00" stroke-dasharray="5,2" d="M1473.21,-344.99C1462.65,-340.36 1449.98,-335.57 1438,-333 1318.03,-307.25 1173.66,-309.11 1093.42,-312.94"/>
+<polygon fill="#9cff00" stroke="#9cff00" points="1092.82,-309.47 1083.01,-313.47 1093.18,-316.46 1092.82,-309.47"/>
+<text text-anchor="middle" x="1269.5" y="-335.4" font-family="Helvetica,sans-Serif" font-size="9.50">solutionGradient, flux</text>
+</g>
+<!-- type~mappedscalar3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node45" class="node">
+<title>type~mappedscalar3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node45"><a xlink:href=".././type/mappedscalar3d.html" xlink:title="MappedScalar3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-409 979,-409 979,-385 1083,-385 1083,-409"/>
+<text text-anchor="middle" x="1031" y="-394.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar3D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel3d_t&#45;&gt;type~mappedscalar3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge66" class="edge">
+<title>type~dgmodel3d_t&#45;&gt;type~mappedscalar3d</title>
+<path fill="none" stroke="#2700ff" stroke-dasharray="5,2" d="M1455.74,-367.75C1449.81,-369.01 1443.77,-370.14 1438,-371 1316.81,-389.01 1173.45,-394.55 1093.61,-396.25"/>
+<polygon fill="#2700ff" stroke="#2700ff" points="1093.17,-392.76 1083.24,-396.46 1093.31,-399.76 1093.17,-392.76"/>
+<text text-anchor="middle" x="1269.5" y="-398.4" font-family="Helvetica,sans-Serif" font-size="9.50">solution, source, fluxDivergence, dSdt, workSol</text>
+</g>
+<!-- type~mappedscalar2d&#45;&gt;type~mappedscalar2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge53" class="edge">
+<title>type~mappedscalar2d&#45;&gt;type~mappedscalar2d_t</title>
+<path fill="none" stroke="#7f00ff" d="M978.91,-523.01C965.88,-522.63 951.9,-522.76 939,-524"/>
+</g>
+<!-- type~mappedvector2d&#45;&gt;type~mappedvector2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge39" class="edge">
+<title>type~mappedvector2d&#45;&gt;type~mappedvector2d_t</title>
+<path fill="none" stroke="#ff0000" d="M999.33,-581.09C992.58,-583.9 985.51,-586.96 979,-590 960.81,-598.5 958.96,-608.78 939,-611"/>
+<path fill="none" stroke="#ff0000" d="M937,-611C927.46,-612.06 917.35,-612.65 907.42,-612.91"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="907.11,-609.42 897.16,-613.08 907.22,-616.41 907.11,-609.42"/>
+</g>
+<!-- type~mappedscalar3d&#45;&gt;type~mappedscalar3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge48" class="edge">
+<title>type~mappedscalar3d&#45;&gt;type~mappedscalar3d_t</title>
+<path fill="none" stroke="#00ffff" d="M999.33,-409.09C992.58,-411.9 985.51,-414.96 979,-418 960.81,-426.5 959.04,-437.8 939,-439"/>
+<path fill="none" stroke="#00ffff" d="M937,-439C927.43,-439.57 917.34,-439.39 907.44,-438.75"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="907.48,-435.24 897.23,-437.93 906.92,-442.22 907.48,-435.24"/>
+</g>
+<!-- type~mappedscalar2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node46" class="node">
+<title>type~mappedscalar2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node46"><a xlink:href=".././type/mappedscalar2d~2.html" xlink:title="MappedScalar2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-497 979,-497 979,-473 1083,-473 1083,-497"/>
+<text text-anchor="middle" x="1031" y="-482.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar2D</text>
+</a>
+</g>
+</g>
+<!-- type~mappedscalar2d~2&#45;&gt;type~mappedscalar2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge54" class="edge">
+<title>type~mappedscalar2d~2&#45;&gt;type~mappedscalar2d_t</title>
+<path fill="none" stroke="#7f00ff" d="M1000.27,-497.05C993.27,-499.94 985.86,-503.05 979,-506 961.1,-513.71 958.41,-522.14 939,-524"/>
+<path fill="none" stroke="#7f00ff" d="M937,-524C927.45,-524.92 917.33,-525.42 907.39,-525.65"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="907.08,-522.15 897.13,-525.79 907.18,-529.15 907.08,-522.15"/>
+</g>
+<!-- type~mappedscalar1d&#45;&gt;type~mappedscalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge55" class="edge">
+<title>type~mappedscalar1d&#45;&gt;type~mappedscalar1d_t</title>
+<path fill="none" stroke="#ff00bf" d="M978.53,-183.65C965.63,-182.58 951.82,-182.11 939,-183"/>
+</g>
+<!-- type~mappedscalar1d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node48" class="node">
+<title>type~mappedscalar1d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node48"><a xlink:href=".././type/mappedscalar1d~2.html" xlink:title="MappedScalar1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1083,-161 979,-161 979,-137 1083,-137 1083,-161"/>
+<text text-anchor="middle" x="1031" y="-146.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MappedScalar1D</text>
+</a>
+</g>
+</g>
+<!-- type~mappedscalar1d~2&#45;&gt;type~mappedscalar1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge56" class="edge">
+<title>type~mappedscalar1d~2&#45;&gt;type~mappedscalar1d_t</title>
+<path fill="none" stroke="#ff00bf" d="M1000.31,-161.05C976.28,-170.65 945.39,-182.56 939,-183"/>
+<path fill="none" stroke="#ff00bf" d="M937,-183C927.42,-183.67 917.3,-184.03 907.36,-184.2"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="907.06,-180.7 897.09,-184.3 907.13,-187.7 907.06,-180.7"/>
+</g>
+<!-- type~dgmodel2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node49" class="node">
+<title>type~dgmodel2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node49"><a xlink:href=".././type/dgmodel2d~2.html" xlink:title="DGModel2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1654,-644 1578,-644 1578,-620 1654,-620 1654,-644"/>
+<text text-anchor="middle" x="1616" y="-629.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel2D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel2d~2&#45;&gt;type~dgmodel2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge61" class="edge">
+<title>type~dgmodel2d~2&#45;&gt;type~dgmodel2d_t</title>
+<path fill="none" stroke="#27ff00" d="M1577.94,-630.78C1571.93,-630.93 1565.78,-631.3 1560,-632"/>
+</g>
+<!-- type~dgmodel3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node50" class="node">
+<title>type~dgmodel3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node50"><a xlink:href=".././type/dgmodel3d.html" xlink:title="DGModel3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1654,-375 1578,-375 1578,-351 1654,-351 1654,-375"/>
+<text text-anchor="middle" x="1616" y="-360.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel3D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel3d&#45;&gt;type~dgmodel3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge62" class="edge">
+<title>type~dgmodel3d&#45;&gt;type~dgmodel3d_t</title>
+<path fill="none" stroke="#00ffc4" d="M1577.99,-356.54C1571.97,-356.19 1565.81,-356.24 1560,-357"/>
+</g>
+<!-- type~dgmodel1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node51" class="node">
+<title>type~dgmodel1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node51"><a xlink:href=".././type/dgmodel1d.html" xlink:title="DGModel1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1654,-202 1578,-202 1578,-178 1654,-178 1654,-202"/>
+<text text-anchor="middle" x="1616" y="-187.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel1D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel1d&#45;&gt;type~dgmodel1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge57" class="edge">
+<title>type~dgmodel1d&#45;&gt;type~dgmodel1d_t</title>
+<path fill="none" stroke="#ffeb00" d="M1577.84,-188.12C1571.84,-188.36 1565.72,-188.92 1560,-190"/>
+</g>
+<!-- type~dgmodel1d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node52" class="node">
+<title>type~dgmodel1d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node52"><a xlink:href=".././type/dgmodel1d~2.html" xlink:title="DGModel1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1654,-160 1578,-160 1578,-136 1654,-136 1654,-160"/>
+<text text-anchor="middle" x="1616" y="-145.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel1D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel1d~2&#45;&gt;type~dgmodel1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge58" class="edge">
+<title>type~dgmodel1d~2&#45;&gt;type~dgmodel1d_t</title>
+<path fill="none" stroke="#ffeb00" d="M1590.72,-160.17C1586.3,-162.83 1581.88,-165.81 1578,-169 1568.51,-176.82 1572.08,-187.73 1560,-190"/>
+<path fill="none" stroke="#ffeb00" d="M1559,-190C1556.51,-190.47 1553.96,-190.86 1551.37,-191.17"/>
+<polygon fill="#ffeb00" stroke="#ffeb00" points="1550.94,-187.7 1541.29,-192.08 1551.57,-194.67 1550.94,-187.7"/>
+</g>
+<!-- type~dgmodel2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node53" class="node">
+<title>type~dgmodel2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node53"><a xlink:href=".././type/dgmodel2d.html" xlink:title="DGModel2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1654,-602 1578,-602 1578,-578 1654,-578 1654,-602"/>
+<text text-anchor="middle" x="1616" y="-587.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel2D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel2d&#45;&gt;type~dgmodel2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge60" class="edge">
+<title>type~dgmodel2d&#45;&gt;type~dgmodel2d_t</title>
+<path fill="none" stroke="#27ff00" d="M1590.72,-602.17C1586.3,-604.83 1581.88,-607.81 1578,-611 1568.51,-618.82 1572.2,-630.52 1560,-632"/>
+<path fill="none" stroke="#27ff00" d="M1559,-632C1556.47,-632.31 1553.88,-632.49 1551.26,-632.57"/>
+<polygon fill="#27ff00" stroke="#27ff00" points="1551.17,-629.07 1541.12,-632.43 1551.07,-636.07 1551.17,-629.07"/>
+</g>
+<!-- type~dgmodel3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node54" class="node">
+<title>type~dgmodel3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node54"><a xlink:href=".././type/dgmodel3d~2.html" xlink:title="DGModel3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1654,-333 1578,-333 1578,-309 1654,-309 1654,-333"/>
+<text text-anchor="middle" x="1616" y="-318.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DGModel3D</text>
+</a>
+</g>
+</g>
+<!-- type~dgmodel3d~2&#45;&gt;type~dgmodel3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge63" class="edge">
+<title>type~dgmodel3d~2&#45;&gt;type~dgmodel3d_t</title>
+<path fill="none" stroke="#00ffc4" d="M1592.3,-333.03C1587.48,-335.82 1582.49,-338.89 1578,-342 1569.44,-347.93 1570.33,-355.65 1560,-357"/>
+<path fill="none" stroke="#00ffc4" d="M1559,-357C1556.49,-357.33 1553.92,-357.59 1551.31,-357.8"/>
+<polygon fill="#00ffc4" stroke="#00ffc4" points="1550.99,-354.32 1541.2,-358.37 1551.38,-361.3 1550.99,-354.32"/>
+</g>
+<!-- type~nulldgmodel3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node55" class="node">
+<title>type~nulldgmodel3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node55"><a xlink:href=".././type/nulldgmodel3d_t.html" xlink:title="NullDGModel3D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1816,-375 1710,-375 1710,-351 1816,-351 1816,-375"/>
+<text text-anchor="middle" x="1763" y="-360.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel3D_t</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel3d_t&#45;&gt;type~dgmodel3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge68" class="edge">
+<title>type~nulldgmodel3d_t&#45;&gt;type~dgmodel3d</title>
+<path fill="none" stroke="#ffff00" d="M1709.63,-360.88C1697.57,-360.98 1684.81,-361.55 1673,-363"/>
+</g>
+<!-- type~advection_diffusion_3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node56" class="node">
+<title>type~advection_diffusion_3d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node56"><a xlink:href=".././type/advection_diffusion_3d_t.html" xlink:title="advection_diffusion_3d_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1835,-330 1691,-330 1691,-306 1835,-306 1835,-330"/>
+<text text-anchor="middle" x="1763" y="-315.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_3d_t</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_3d_t&#45;&gt;type~dgmodel3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge69" class="edge">
+<title>type~advection_diffusion_3d_t&#45;&gt;type~dgmodel3d</title>
+<path fill="none" stroke="#ffff00" d="M1714.48,-330.09C1706.28,-333.27 1698.12,-337.19 1691,-342 1680.81,-348.88 1685.2,-361.51 1673,-363"/>
+<path fill="none" stroke="#ffff00" d="M1672,-363C1669.47,-363.31 1666.87,-363.55 1664.24,-363.75"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="1663.88,-360.26 1654.06,-364.23 1664.21,-367.25 1663.88,-360.26"/>
+</g>
+<!-- type~nulldgmodel1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node57" class="node">
+<title>type~nulldgmodel1d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node57"><a xlink:href=".././type/nulldgmodel1d_t.html" xlink:title="NullDGModel1D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1816,-210 1710,-210 1710,-186 1816,-186 1816,-210"/>
+<text text-anchor="middle" x="1763" y="-195.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel1D_t</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel1d_t&#45;&gt;type~dgmodel1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge70" class="edge">
+<title>type~nulldgmodel1d_t&#45;&gt;type~dgmodel1d</title>
+<path fill="none" stroke="#00ff00" d="M1720.99,-185.95C1698.24,-179.36 1674.27,-172.59 1673,-173"/>
+</g>
+<!-- type~nulldgmodel2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node58" class="node">
+<title>type~nulldgmodel2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node58"><a xlink:href=".././type/nulldgmodel2d_t.html" xlink:title="NullDGModel2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1816,-654 1710,-654 1710,-630 1816,-630 1816,-654"/>
+<text text-anchor="middle" x="1763" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel2d_t&#45;&gt;type~dgmodel2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge74" class="edge">
+<title>type~nulldgmodel2d_t&#45;&gt;type~dgmodel2d</title>
+<path fill="none" stroke="#0000ff" d="M1709.72,-630.91C1703.09,-628.27 1696.66,-625.02 1691,-621 1679.83,-613.08 1686.66,-595.07 1673,-596"/>
+</g>
+<!-- type~burgers1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node59" class="node">
+<title>type~burgers1d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node59"><a xlink:href=".././type/burgers1d_t.html" xlink:title="Burgers1D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1802.5,-168 1723.5,-168 1723.5,-144 1802.5,-144 1802.5,-168"/>
+<text text-anchor="middle" x="1763" y="-153.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Burgers1D_t</text>
+</a>
+</g>
+</g>
+<!-- type~burgers1d_t&#45;&gt;type~dgmodel1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge72" class="edge">
+<title>type~burgers1d_t&#45;&gt;type~dgmodel1d</title>
+<path fill="none" stroke="#00ff00" d="M1723.37,-161.26C1707.54,-163.96 1689.17,-167.8 1673,-173"/>
+</g>
+<!-- type~advection_diffusion_1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node60" class="node">
+<title>type~advection_diffusion_1d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node60"><a xlink:href=".././type/advection_diffusion_1d_t.html" xlink:title="advection_diffusion_1d_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1835,-84 1691,-84 1691,-60 1835,-60 1835,-84"/>
+<text text-anchor="middle" x="1763" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_1d_t</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_1d_t&#45;&gt;type~dgmodel1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge71" class="edge">
+<title>type~advection_diffusion_1d_t&#45;&gt;type~dgmodel1d</title>
+<path fill="none" stroke="#00ff00" d="M1744.72,-84.14C1729.12,-95.78 1706.33,-114.57 1691,-135 1679.78,-149.95 1690.79,-167.28 1673,-173"/>
+<path fill="none" stroke="#00ff00" d="M1672,-173C1669.28,-173.87 1666.48,-174.77 1663.65,-175.66"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="1662.51,-172.35 1654.02,-178.68 1664.61,-179.03 1662.51,-172.35"/>
+</g>
+<!-- type~advection_diffusion_2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node61" class="node">
+<title>type~advection_diffusion_2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node61"><a xlink:href=".././type/advection_diffusion_2d_t.html" xlink:title="advection_diffusion_2d_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1835,-612 1691,-612 1691,-588 1835,-588 1835,-612"/>
+<text text-anchor="middle" x="1763" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_2d_t</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_2d_t&#45;&gt;type~dgmodel2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge73" class="edge">
+<title>type~advection_diffusion_2d_t&#45;&gt;type~dgmodel2d</title>
+<path fill="none" stroke="#0000ff" d="M1690.58,-595.38C1684.63,-595.42 1678.71,-595.61 1673,-596"/>
+</g>
+<!-- type~linearshallowwater2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node62" class="node">
+<title>type~linearshallowwater2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node62"><a xlink:href=".././type/linearshallowwater2d_t.html" xlink:title="LinearShallowWater2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1834.5,-570 1691.5,-570 1691.5,-546 1834.5,-546 1834.5,-570"/>
+<text text-anchor="middle" x="1763" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LinearShallowWater2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~linearshallowwater2d_t&#45;&gt;type~dgmodel2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge75" class="edge">
+<title>type~linearshallowwater2d_t&#45;&gt;type~dgmodel2d</title>
+<path fill="none" stroke="#0000ff" d="M1710.38,-570.12C1703.65,-572.6 1697.02,-575.54 1691,-579 1681.46,-584.49 1683.98,-595.26 1673,-596"/>
+</g>
+<!-- type~lineareuler2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_node63" class="node">
+<title>type~lineareuler2d_t</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node63"><a xlink:href=".././type/lineareuler2d_t.html" xlink:title="LinearEuler2D_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1812,-507 1714,-507 1714,-483 1812,-483 1812,-507"/>
+<text text-anchor="middle" x="1763" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LinearEuler2D_t</text>
+</a>
+</g>
+</g>
+<!-- type~lineareuler2d_t&#45;&gt;type~dgmodel2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge76" class="edge">
+<title>type~lineareuler2d_t&#45;&gt;type~dgmodel2d</title>
+<path fill="none" stroke="#0000ff" d="M1731.1,-507.05C1717.08,-513.92 1701.36,-523.83 1691,-537 1674.05,-558.55 1700.35,-594.15 1673,-596"/>
+<path fill="none" stroke="#0000ff" d="M1672,-596C1669.48,-596.17 1666.91,-596.24 1664.31,-596.24"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="1664.37,-592.74 1654.24,-595.85 1664.1,-599.73 1664.37,-592.74"/>
+</g>
+<!-- type~advection_diffusion_3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node64" class="node">
+<title>type~advection_diffusion_3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node64"><a xlink:href=".././type/advection_diffusion_3d.html" xlink:title="advection_diffusion_3d">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2007,-318 1872,-318 1872,-294 2007,-294 2007,-318"/>
+<text text-anchor="middle" x="1939.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_3d</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_3d&#45;&gt;type~advection_diffusion_3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge79" class="edge">
+<title>type~advection_diffusion_3d&#45;&gt;type~advection_diffusion_3d_t</title>
+<path fill="none" stroke="#ffaa00" d="M1871.86,-303.69C1865.8,-304.17 1859.77,-304.92 1854,-306"/>
+</g>
+<!-- type~advection_diffusion_3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node65" class="node">
+<title>type~advection_diffusion_3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node65"><a xlink:href=".././type/advection_diffusion_3d~2.html" xlink:title="advection_diffusion_3d">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2007,-276 1872,-276 1872,-252 2007,-252 2007,-276"/>
+<text text-anchor="middle" x="1939.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_3d</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_3d~2&#45;&gt;type~advection_diffusion_3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge80" class="edge">
+<title>type~advection_diffusion_3d~2&#45;&gt;type~advection_diffusion_3d_t</title>
+<path fill="none" stroke="#ffaa00" d="M1889.12,-276.14C1883.11,-278.6 1877.25,-281.53 1872,-285 1861.74,-291.78 1866.08,-303.73 1854,-306"/>
+<path fill="none" stroke="#ffaa00" d="M1853,-306C1850.36,-306.5 1847.68,-306.98 1844.96,-307.45"/>
+<polygon fill="#ffaa00" stroke="#ffaa00" points="1844.33,-304.01 1835.03,-309.09 1845.47,-310.91 1844.33,-304.01"/>
+</g>
+<!-- type~nulldgmodel2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node66" class="node">
+<title>type~nulldgmodel2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node66"><a xlink:href=".././type/nulldgmodel2d.html" xlink:title="NullDGModel2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1988,-738 1891,-738 1891,-714 1988,-714 1988,-738"/>
+<text text-anchor="middle" x="1939.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel2D</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel2d&#45;&gt;type~nulldgmodel2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge83" class="edge">
+<title>type~nulldgmodel2d&#45;&gt;type~nulldgmodel2d_t</title>
+<path fill="none" stroke="#00ff00" d="M1890.85,-715.23C1878.75,-712.2 1865.83,-708.71 1854,-705"/>
+</g>
+<!-- type~burgers1d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node67" class="node">
+<title>type~burgers1d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node67"><a xlink:href=".././type/burgers1d~2.html" xlink:title="Burgers1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1974.5,-150 1904.5,-150 1904.5,-126 1974.5,-126 1974.5,-150"/>
+<text text-anchor="middle" x="1939.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Burgers1D</text>
+</a>
+</g>
+</g>
+<!-- type~burgers1d~2&#45;&gt;type~burgers1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge86" class="edge">
+<title>type~burgers1d~2&#45;&gt;type~burgers1d_t</title>
+<path fill="none" stroke="#00ffa9" d="M1904.42,-134.66C1888.87,-133.99 1870.33,-134.38 1854,-138"/>
+</g>
+<!-- type~advection_diffusion_1d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node68" class="node">
+<title>type~advection_diffusion_1d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node68"><a xlink:href=".././type/advection_diffusion_1d~2.html" xlink:title="advection_diffusion_1d">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2007,-66 1872,-66 1872,-42 2007,-42 2007,-66"/>
+<text text-anchor="middle" x="1939.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_1d</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_1d~2&#45;&gt;type~advection_diffusion_1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge88" class="edge">
+<title>type~advection_diffusion_1d~2&#45;&gt;type~advection_diffusion_1d_t</title>
+<path fill="none" stroke="#00a9ff" d="M1871.78,-51.29C1865.73,-51.86 1859.73,-52.73 1854,-54"/>
+</g>
+<!-- type~advection_diffusion_2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node69" class="node">
+<title>type~advection_diffusion_2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node69"><a xlink:href=".././type/advection_diffusion_2d.html" xlink:title="advection_diffusion_2d">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2007,-654 1872,-654 1872,-630 2007,-630 2007,-654"/>
+<text text-anchor="middle" x="1939.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_2d</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_2d&#45;&gt;type~advection_diffusion_2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge89" class="edge">
+<title>type~advection_diffusion_2d&#45;&gt;type~advection_diffusion_2d_t</title>
+<path fill="none" stroke="#0000ff" d="M1898.91,-629.91C1884.87,-626.23 1868.87,-622.7 1854,-621"/>
+</g>
+<!-- type~linearshallowwater2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node70" class="node">
+<title>type~linearshallowwater2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node70"><a xlink:href=".././type/linearshallowwater2d.html" xlink:title="LinearShallowWater2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2006.5,-570 1872.5,-570 1872.5,-546 2006.5,-546 2006.5,-570"/>
+<text text-anchor="middle" x="1939.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LinearShallowWater2D</text>
+</a>
+</g>
+</g>
+<!-- type~linearshallowwater2d&#45;&gt;type~linearshallowwater2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge91" class="edge">
+<title>type~linearshallowwater2d&#45;&gt;type~linearshallowwater2d_t</title>
+<path fill="none" stroke="#aa00ff" d="M1872.44,-556.48C1866.2,-556.79 1859.97,-557.28 1854,-558"/>
+</g>
+<!-- type~linearshallowwater2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node71" class="node">
+<title>type~linearshallowwater2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node71"><a xlink:href=".././type/linearshallowwater2d~2.html" xlink:title="LinearShallowWater2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2006.5,-528 1872.5,-528 1872.5,-504 2006.5,-504 2006.5,-528"/>
+<text text-anchor="middle" x="1939.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LinearShallowWater2D</text>
+</a>
+</g>
+</g>
+<!-- type~linearshallowwater2d~2&#45;&gt;type~linearshallowwater2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge92" class="edge">
+<title>type~linearshallowwater2d~2&#45;&gt;type~linearshallowwater2d_t</title>
+<path fill="none" stroke="#aa00ff" d="M1889.12,-528.14C1883.11,-530.6 1877.25,-533.53 1872,-537 1861.74,-543.78 1866.2,-556.53 1854,-558"/>
+<path fill="none" stroke="#aa00ff" d="M1853,-558C1850.29,-558.33 1847.53,-558.61 1844.74,-558.85"/>
+<polygon fill="#aa00ff" stroke="#aa00ff" points="1844.27,-555.37 1834.54,-559.55 1844.75,-562.36 1844.27,-555.37"/>
+</g>
+<!-- type~lineareuler2d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node72" class="node">
+<title>type~lineareuler2d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node72"><a xlink:href=".././type/lineareuler2d.html" xlink:title="LinearEuler2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1984,-486 1895,-486 1895,-462 1984,-462 1984,-486"/>
+<text text-anchor="middle" x="1939.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LinearEuler2D</text>
+</a>
+</g>
+</g>
+<!-- type~lineareuler2d&#45;&gt;type~lineareuler2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge93" class="edge">
+<title>type~lineareuler2d&#45;&gt;type~lineareuler2d_t</title>
+<path fill="none" stroke="#ff00aa" d="M1894.63,-470.15C1881.42,-470.01 1866.99,-470.91 1854,-474"/>
+</g>
+<!-- type~nulldgmodel3d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node73" class="node">
+<title>type~nulldgmodel3d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node73"><a xlink:href=".././type/nulldgmodel3d.html" xlink:title="NullDGModel3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1988,-402 1891,-402 1891,-378 1988,-378 1988,-402"/>
+<text text-anchor="middle" x="1939.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel3D</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel3d&#45;&gt;type~nulldgmodel3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge77" class="edge">
+<title>type~nulldgmodel3d&#45;&gt;type~nulldgmodel3d_t</title>
+<path fill="none" stroke="#ff0000" d="M1890.87,-380.59C1878.89,-378.8 1866.02,-377.36 1854,-377"/>
+</g>
+<!-- type~nulldgmodel1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node74" class="node">
+<title>type~nulldgmodel1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node74"><a xlink:href=".././type/nulldgmodel1d.html" xlink:title="NullDGModel1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1988,-234 1891,-234 1891,-210 1988,-210 1988,-234"/>
+<text text-anchor="middle" x="1939.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel1D</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel1d&#45;&gt;type~nulldgmodel1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge81" class="edge">
+<title>type~nulldgmodel1d&#45;&gt;type~nulldgmodel1d_t</title>
+<path fill="none" stroke="#aaff00" d="M1890.98,-210.05C1878.99,-207.85 1866.09,-206.18 1854,-206"/>
+</g>
+<!-- type~nulldgmodel3d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node75" class="node">
+<title>type~nulldgmodel3d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node75"><a xlink:href=".././type/nulldgmodel3d~2.html" xlink:title="NullDGModel3D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1988,-360 1891,-360 1891,-336 1988,-336 1988,-360"/>
+<text text-anchor="middle" x="1939.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel3D</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel3d~2&#45;&gt;type~nulldgmodel3d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge78" class="edge">
+<title>type~nulldgmodel3d~2&#45;&gt;type~nulldgmodel3d_t</title>
+<path fill="none" stroke="#ff0000" d="M1897.81,-360.05C1889.22,-362.82 1880.27,-365.87 1872,-369 1863.81,-372.1 1862.75,-377.27 1854,-377"/>
+<path fill="none" stroke="#ff0000" d="M1853,-377C1844.25,-376.73 1835.08,-375.92 1826.08,-374.8"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1826.41,-371.31 1816.03,-373.43 1825.47,-378.25 1826.41,-371.31"/>
+</g>
+<!-- type~nulldgmodel1d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node76" class="node">
+<title>type~nulldgmodel1d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node76"><a xlink:href=".././type/nulldgmodel1d~2.html" xlink:title="NullDGModel1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1988,-192 1891,-192 1891,-168 1988,-168 1988,-192"/>
+<text text-anchor="middle" x="1939.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel1D</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel1d~2&#45;&gt;type~nulldgmodel1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge82" class="edge">
+<title>type~nulldgmodel1d~2&#45;&gt;type~nulldgmodel1d_t</title>
+<path fill="none" stroke="#aaff00" d="M1900.09,-192.1C1878.38,-198.89 1855.29,-206.02 1854,-206"/>
+<path fill="none" stroke="#aaff00" d="M1853,-206C1844.32,-205.87 1835.19,-205.41 1826.21,-204.78"/>
+<polygon fill="#aaff00" stroke="#aaff00" points="1826.41,-201.29 1816.17,-204 1825.87,-208.27 1826.41,-201.29"/>
+</g>
+<!-- type~nulldgmodel2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node77" class="node">
+<title>type~nulldgmodel2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node77"><a xlink:href=".././type/nulldgmodel2d~2.html" xlink:title="NullDGModel2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1988,-696 1891,-696 1891,-672 1988,-672 1988,-696"/>
+<text text-anchor="middle" x="1939.5" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NullDGModel2D</text>
+</a>
+</g>
+</g>
+<!-- type~nulldgmodel2d~2&#45;&gt;type~nulldgmodel2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge84" class="edge">
+<title>type~nulldgmodel2d~2&#45;&gt;type~nulldgmodel2d_t</title>
+<path fill="none" stroke="#00ff00" d="M1904.93,-696.11C1885.69,-702.31 1863.52,-707.99 1854,-705"/>
+<path fill="none" stroke="#00ff00" d="M1853,-705C1825.99,-696.52 1800.17,-676.46 1783.36,-661.23"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="1785.56,-658.49 1775.87,-654.21 1780.78,-663.6 1785.56,-658.49"/>
+</g>
+<!-- type~burgers1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node78" class="node">
+<title>type~burgers1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node78"><a xlink:href=".././type/burgers1d.html" xlink:title="Burgers1D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1974.5,-108 1904.5,-108 1904.5,-84 1974.5,-84 1974.5,-108"/>
+<text text-anchor="middle" x="1939.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Burgers1D</text>
+</a>
+</g>
+</g>
+<!-- type~burgers1d&#45;&gt;type~burgers1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge85" class="edge">
+<title>type~burgers1d&#45;&gt;type~burgers1d_t</title>
+<path fill="none" stroke="#00ffa9" d="M1904.4,-102.85C1893.47,-106.04 1881.7,-110.59 1872,-117 1861.74,-123.78 1866,-135.34 1854,-138"/>
+<path fill="none" stroke="#00ffa9" d="M1853,-138C1839.88,-140.91 1825.62,-143.87 1812.45,-146.54"/>
+<polygon fill="#00ffa9" stroke="#00ffa9" points="1811.73,-143.11 1802.62,-148.51 1813.11,-149.97 1811.73,-143.11"/>
+</g>
+<!-- type~advection_diffusion_1d -->
+<g id="type~~lagrange_t~~InheritedByGraph_node79" class="node">
+<title>type~advection_diffusion_1d</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node79"><a xlink:href=".././type/advection_diffusion_1d.html" xlink:title="advection_diffusion_1d">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2007,-24 1872,-24 1872,0 2007,0 2007,-24"/>
+<text text-anchor="middle" x="1939.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_1d</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_1d&#45;&gt;type~advection_diffusion_1d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge87" class="edge">
+<title>type~advection_diffusion_1d&#45;&gt;type~advection_diffusion_1d_t</title>
+<path fill="none" stroke="#00a9ff" d="M1889.12,-24.14C1883.11,-26.6 1877.25,-29.53 1872,-33 1861.74,-39.78 1866,-51.34 1854,-54"/>
+<path fill="none" stroke="#00a9ff" d="M1853,-54C1847.18,-55.29 1841.14,-56.59 1835.07,-57.87"/>
+<polygon fill="#00a9ff" stroke="#00a9ff" points="1833.94,-54.53 1824.86,-60 1835.37,-61.38 1833.94,-54.53"/>
+</g>
+<!-- type~advection_diffusion_2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node80" class="node">
+<title>type~advection_diffusion_2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node80"><a xlink:href=".././type/advection_diffusion_2d~2.html" xlink:title="advection_diffusion_2d">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="2007,-612 1872,-612 1872,-588 2007,-588 2007,-612"/>
+<text text-anchor="middle" x="1939.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">advection_diffusion_2d</text>
+</a>
+</g>
+</g>
+<!-- type~advection_diffusion_2d~2&#45;&gt;type~advection_diffusion_2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge90" class="edge">
+<title>type~advection_diffusion_2d~2&#45;&gt;type~advection_diffusion_2d_t</title>
+<path fill="none" stroke="#0000ff" d="M1900.81,-612.1C1882.78,-617.33 1863.16,-622.05 1854,-621"/>
+<path fill="none" stroke="#0000ff" d="M1853,-621C1840.92,-619.62 1828.11,-617.18 1816.08,-614.45"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="1816.73,-611.01 1806.19,-612.1 1815.11,-617.82 1816.73,-611.01"/>
+</g>
+<!-- type~lineareuler2d~2 -->
+<g id="type~~lagrange_t~~InheritedByGraph_node81" class="node">
+<title>type~lineareuler2d~2</title>
+<g id="a_type~~lagrange_t~~InheritedByGraph_node81"><a xlink:href=".././type/lineareuler2d~2.html" xlink:title="LinearEuler2D">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1984,-444 1895,-444 1895,-420 1984,-420 1984,-444"/>
+<text text-anchor="middle" x="1939.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LinearEuler2D</text>
+</a>
+</g>
+</g>
+<!-- type~lineareuler2d~2&#45;&gt;type~lineareuler2d_t -->
+<g id="type~~lagrange_t~~InheritedByGraph_edge94" class="edge">
+<title>type~lineareuler2d~2&#45;&gt;type~lineareuler2d_t</title>
+<path fill="none" stroke="#ff00aa" d="M1894.7,-442C1886.78,-444.85 1878.87,-448.46 1872,-453 1861.74,-459.78 1865.96,-471.15 1854,-474"/>
+<path fill="none" stroke="#ff00aa" d="M1853,-474C1842.93,-476.4 1832.23,-478.93 1821.85,-481.39"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="1820.97,-478 1812.05,-483.7 1822.58,-484.81 1820.97,-478"/>
+</g>
+</g>
+</svg>
+</div><script>var pantypelagrange_tInheritedByGraph = svgPanZoom('#typelagrange_tInheritedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="186pt" height="32pt"
+ viewBox="0.00 0.00 185.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 181.5,-28 181.5,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="177.5,-24 72.5,-24 72.5,0 177.5,0 177.5,-24"/>
+<text text-anchor="middle" x="125" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a derived type to the parent type which it
+    extends. Dashed arrows point from a derived type to the other
+    types it contains as a components, with a label listing the name(s) of
+    said component(s). Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-m">M</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-n">N</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-bmatrix">bMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-bweights">bWeights</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-blas_handle">blas_handle</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-controlnodetype">controlNodeType</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-controlpoints">controlPoints</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-dmatrix">dMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-dgmatrix">dgMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-imatrix">iMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-qweights">qWeights</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-targetnodetype">targetNodeType</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#variable-targetpoints">targetPoints</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculatebarycentricweights">CalculateBarycentricWeights</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculatederivativematrix">CalculateDerivativeMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculateinterpolationmatrix">CalculateInterpolationMatrix</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-calculatelagrangepolynomials">CalculateLagrangePolynomials</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-free~7">Free</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-init~7">Init</a>
+      <a class="list-group-item" href="../type/lagrange_t.html#boundprocedure-writehdf5~4">WriteHDF5</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/lagrange_t.html#src">Lagrange_t</a>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+    <h2>Components</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-m"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>M</strong></td><td></td><td></td><td><p>The number of target points.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-n"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>N</strong></td><td></td><td></td><td><p>The number of control points.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-bmatrix"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:)</td><td>::</td>
+  <td><strong>bMatrix</strong></td><td></td><td></td><td><p>The boundary interpolation matrix that is used to map a grid of nodal values at the control points to the element boundaries.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-bweights"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:)</td><td>::</td>
+  <td><strong>bWeights</strong></td><td></td><td></td><td><p>The barycentric weights that are calculated from the controlPoints and used for interpolation.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-blas_handle"></span>type(c_ptr),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>blas_handle</strong></td><td> =</td><td>c_null_ptr</td><td><p>A handle for working with hipblas</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-controlnodetype"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>controlNodeType</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-controlpoints"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:)</td><td>::</td>
+  <td><strong>controlPoints</strong></td><td></td><td></td><td><p>The set of nodes in one dimension where data is known.
+To create higher dimension interpolation and differentiation operators, structured grids in two and three
+dimensions are created by tensor products of the controlPoints. This design decision implies that all
+spectral element methods supported by the Lagrange class have the same polynomial degree in each
+computational/spatial dimension. In practice, the controlPoints are the Legendre-Gauss, Legendre-Gauss-Lobatto,
+Legendre-Gauss-Radau, Chebyshev-Gauss, Chebyshev-Gauss-Lobatto, or Chebyshev-Gauss-Radau quadrature points over
+the domain [-1,1] (computational space). The Init routine for this class restricts controlPoints to one of
+these quadrature types or uniform points on [-1,1].</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dmatrix"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:)</td><td>::</td>
+  <td><strong>dMatrix</strong></td><td></td><td></td><td><p>The derivative matrix for mapping function nodal values to a nodal values of the derivative estimate. The
+dMatrix is based on a strong form of the derivative.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dgmatrix"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:)</td><td>::</td>
+  <td><strong>dgMatrix</strong></td><td></td><td></td><td><p>The derivative matrix for mapping function nodal values to a nodal values of the derivative estimate. The dgMatrix is based
+on a weak form of the derivative. It must be used with bMatrix to account for boundary contributions in the weak form.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-imatrix"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:)</td><td>::</td>
+  <td><strong>iMatrix</strong></td><td></td><td></td><td><p>The interpolation matrix (transpose) for mapping data from the control grid to the target grid.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-qweights"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:)</td><td>::</td>
+  <td><strong>qWeights</strong></td><td></td><td></td><td><p>The quadrature weights for discrete integration. The quadradture weights depend on the type of controlPoints
+provided; one of Legendre-Gauss, Legendre-Gauss-Lobatto, Legendre-Gauss-Radau, Chebyshev-Gauss,
+Chebyshev-Gauss-Lobatto, Chebyshev-Gauss Radau, or Uniform. If Uniform, the quadrature weights are constant
+<script type="math/tex; mode=display">dx = \frac{2.0}{N+1}</script>.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-targetnodetype"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>targetNodeType</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-targetpoints"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:)</td><td>::</td>
+  <td><strong>targetPoints</strong></td><td></td><td></td><td><p>The set of nodes in one dimension where data is to be interpolated to. To create higher dimension interpolation
+and differentiation operators, structured grids in two and three dimensions are created by tensor products of
+the targetPoints. In practice, the targetPoints are set to a uniformly distributed set of points between [-1,1]
+(computational space) to allow for interpolation from unevenly spaced quadrature points to a plotting grid.</p></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+ 
+    <section>
+    <h2>Type-Bound Procedures</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-calculatebarycentricweights"></span><h3>procedure, public :: <strong>CalculateBarycentricWeights</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public subroutine <a href='../proc/calculatebarycentricweights.html'>CalculateBarycentricWeights</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-calculatederivativematrix"></span><h3>procedure, public :: <strong>CalculateDerivativeMatrix</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public subroutine <a href='../proc/calculatederivativematrix.html'>CalculateDerivativeMatrix</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-calculateinterpolationmatrix"></span><h3>procedure, public :: <strong>CalculateInterpolationMatrix</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public subroutine <a href='../proc/calculateinterpolationmatrix.html'>CalculateInterpolationMatrix</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-calculatelagrangepolynomials"></span><h3>procedure, public :: <strong>CalculateLagrangePolynomials</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public function <a href='../proc/calculatelagrangepolynomials.html'>CalculateLagrangePolynomials</a>(this, sE) result(lAtS)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=prec)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>sE</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=prec)(0:this%N)</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-free~7"></span><h3>procedure, public :: <strong>Free</strong>  => <a href='../proc/free_lagrange_t.html'>Free_Lagrange_t</a>   </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public subroutine <a href='../proc/free_lagrange_t.html'>Free_Lagrange_t</a>(this)</h3>
+<p>Frees all memory (host and device) associated with an instance of the Lagrange_t class</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p>Lagrange_t class instance</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-init~7"></span><h3>procedure, public :: <strong>Init</strong>  => <a href='../proc/init_lagrange_t.html'>Init_Lagrange_t</a>   </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public subroutine <a href='../proc/init_lagrange_t.html'>Init_Lagrange_t</a>(this, N, controlNodeType, M, targetNodeType)</h3>
+<p>Initialize an instance of the Lagrange_t class
+On output, all of the attributes for the Lagrange_t class are allocated and values are initialized according to the number of
+control points, number of target points, and the types for the control and target nodes.
+If a GPU is available, device pointers for the Lagrange_t attributes are allocated and initialized.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p>Lagrange_t class instance</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>N</strong></td><td><p>The number of control points for interpolant</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>controlNodeType</strong></td><td><p>The integer code specifying the type of control points. Parameters are defined in SELF_Constants.f90. One of GAUSS(=1),
+GAUSS_LOBATTO(=2), or UNIFORM(=3)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>M</strong></td><td><p>The number of target points for the interpolant</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>targetNodeType</strong></td><td><p>The integer code specifying the type of target points. Parameters are defined in SELF_Constants.f90. One of GAUSS(=1),
+GAUSS_LOBATTO(=2), or UNIFORM(=3)</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-writehdf5~4"></span><h3>procedure, public :: <strong>WriteHDF5</strong>  => <a href='../proc/writehdf5_lagrange_t.html'>WriteHDF5_Lagrange_t</a>   </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>public subroutine <a href='../proc/writehdf5_lagrange_t.html'>WriteHDF5_Lagrange_t</a>(this, fileId)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/lagrange_t.html'>Lagrange_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer(kind=HID_T),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>fileId</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+    </section>
+    
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="highlight"><pre><span></span><span class="w">  </span><span class="k">type</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Lagrange_t</span>
+<span class="w">    </span><span class="c">!! A data structure for working with Lagrange Interpolating Polynomials in one, two, and three dimensions.</span>
+<span class="w">    </span><span class="c">!! The Lagrange data-structure stores the information necessary to interpolate between two</span>
+<span class="w">    </span><span class="c">!! sets of grid-points and to estimate the derivative of data at native grid points. Routines for</span>
+<span class="w">    </span><span class="c">!! multidimensional interpolation are based on the tensor product of 1-D interpolants. It is</span>
+<span class="w">    </span><span class="c">!! assumed that the polynomial degree (and the interpolation nodes) are the same in each direction.</span>
+<span class="w">    </span><span class="c">!! This assumption permits the storage of only one array of interpolation nodes and barycentric</span>
+<span class="w">    </span><span class="c">!! weights and is what allows this data structure to be flexible.</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span>
+<span class="w">      </span><span class="c">!! The number of control points.</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">controlNodeType</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">M</span>
+<span class="w">      </span><span class="c">!! The number of target points.</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">targetNodeType</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="kt">c_ptr</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">blas_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">c_null_ptr</span>
+<span class="w">      </span><span class="c">!! A handle for working with hipblas</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">controlPoints</span>
+<span class="w">      </span><span class="c">!! The set of nodes in one dimension where data is known.</span>
+<span class="w">      </span><span class="c">!! To create higher dimension interpolation and differentiation operators, structured grids in two and three</span>
+<span class="w">      </span><span class="c">!! dimensions are created by tensor products of the controlPoints. This design decision implies that all</span>
+<span class="w">      </span><span class="c">!! spectral element methods supported by the Lagrange class have the same polynomial degree in each</span>
+<span class="w">      </span><span class="c">!! computational/spatial dimension. In practice, the controlPoints are the Legendre-Gauss, Legendre-Gauss-Lobatto,</span>
+<span class="w">      </span><span class="c">!! Legendre-Gauss-Radau, Chebyshev-Gauss, Chebyshev-Gauss-Lobatto, or Chebyshev-Gauss-Radau quadrature points over</span>
+<span class="w">      </span><span class="c">!! the domain [-1,1] (computational space). The Init routine for this class restricts controlPoints to one of</span>
+<span class="w">      </span><span class="c">!! these quadrature types or uniform points on [-1,1].</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">targetPoints</span>
+<span class="w">      </span><span class="c">!! The set of nodes in one dimension where data is to be interpolated to. To create higher dimension interpolation</span>
+<span class="w">      </span><span class="c">!! and differentiation operators, structured grids in two and three dimensions are created by tensor products of</span>
+<span class="w">      </span><span class="c">!! the targetPoints. In practice, the targetPoints are set to a uniformly distributed set of points between [-1,1]</span>
+<span class="w">      </span><span class="c">!! (computational space) to allow for interpolation from unevenly spaced quadrature points to a plotting grid.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bWeights</span>
+<span class="w">      </span><span class="c">!! The barycentric weights that are calculated from the controlPoints and used for interpolation.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">qWeights</span>
+<span class="w">      </span><span class="c">!! The quadrature weights for discrete integration. The quadradture weights depend on the type of controlPoints</span>
+<span class="w">      </span><span class="c">!! provided; one of Legendre-Gauss, Legendre-Gauss-Lobatto, Legendre-Gauss-Radau, Chebyshev-Gauss,</span>
+<span class="w">      </span><span class="c">!! Chebyshev-Gauss-Lobatto, Chebyshev-Gauss Radau, or Uniform. If Uniform, the quadrature weights are constant</span>
+<span class="w">      </span><span class="c">!! $$dx = \frac{2.0}{N+1}$$.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iMatrix</span>
+<span class="w">      </span><span class="c">!! The interpolation matrix (transpose) for mapping data from the control grid to the target grid.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dMatrix</span>
+<span class="w">      </span><span class="c">!! The derivative matrix for mapping function nodal values to a nodal values of the derivative estimate. The</span>
+<span class="w">      </span><span class="c">!! dMatrix is based on a strong form of the derivative.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dgMatrix</span>
+<span class="w">      </span><span class="c">!! The derivative matrix for mapping function nodal values to a nodal values of the derivative estimate. The dgMatrix is based</span>
+<span class="w">      </span><span class="c">!! on a weak form of the derivative. It must be used with bMatrix to account for boundary contributions in the weak form.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">prec</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">contiguous</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bMatrix</span>
+<span class="w">      </span><span class="c">!! The boundary interpolation matrix that is used to map a grid of nodal values at the control points to the element boundaries.</span>
+
+<span class="w">  </span><span class="k">contains</span>
+
+<span class="k">    procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Init</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Init_Lagrange_t</span>
+<span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Free</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Free_Lagrange_t</span>
+
+<span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">WriteHDF5</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">WriteHDF5_Lagrange_t</span>
+
+<span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CalculateBarycentricWeights</span>
+<span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CalculateInterpolationMatrix</span>
+<span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CalculateDerivativeMatrix</span>
+<span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CalculateLagrangePolynomials</span>
+
+<span class="w">  </span><span class="k">endtype </span><span class="n">Lagrange_t</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SELF was developed by Fluid Numerics<br>&copy; 2024 3-Clause BSD with attribution
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-12-26 14:35            </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>
